@@ -33,10 +33,17 @@ class UserService
     }
 
     /**
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model[]
      */
     public function getAllPatients(){
         return $this->repository->findAllPatients();
+    }
+
+    /**
+     * @return int
+     */
+    public function countAllPatients(){
+        return $this->repository->CountAllPatients();
     }
 
     /**

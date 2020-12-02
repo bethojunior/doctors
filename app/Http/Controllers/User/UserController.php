@@ -21,28 +21,14 @@ class UserController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function authenticate(Request $request)
-    {
-        $request = $request->all();
-
-        if(!isset($request['email']))
-            return ApiResponse::error('','Email é um campo válido','false');
-
-        if(!isset($request['password']))
-            return ApiResponse::error('','Senha é um campo válido','false');
-
-        try{
-            $user = $this->service
-                ->authenticate($request);
-        }catch (\Exception $e){
-            return ApiResponse::error('',$e->getMessage());
-        }
-
-        return ApiResponse::success($user,'Usuário logado');
-    }
+   public function getPatients()
+   {
+       $users = $this->service
+           ->getAllPatients();
+       return view('users.patients')->with(['users' => $users]);
+   }
 
     /**
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View

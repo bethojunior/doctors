@@ -237,29 +237,17 @@ return [
         ],
         ['header' => 'Gerenciamento de pacientes'],
         [
-            'text' => 'Gerenciamento',
-            'icon' => 'fa fa-cog',
+            'text' => 'Pacientes',
+            'icon' => 'fa fa-cogs',
             'submenu' => [
                 [
-                    'text' => 'Tipos de produto',
-                    'icon' => 'fa fa-cogs',
-                    'url'  => 'typeProduct'
+                    'text' => 'Inserir dados',
+                    'url'  => 'timeline/create'
                 ],
                 [
-                    'text' => 'Produtos',
-                    'icon' => 'fa fa-cogs',
-                    'submenu' => [
-                        [
-                            'text' => 'Inserir Produto',
-                            'url'  => '#'
-                        ],
-                        [
-                            'text' => 'Listar Pacientes',
-                            'url'  => '#'
-                        ],
-
-                    ]
-                ]
+                    'text' => 'Listagem de pacientes',
+                    'url'  => 'user/patients'
+                ],
             ]
         ],
 

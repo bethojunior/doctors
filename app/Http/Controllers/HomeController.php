@@ -30,7 +30,7 @@ class HomeController extends Controller
         $user = Auth::user();
 
         $patients = $this->userService
-            ->getAllPatients();
+            ->countAllPatients();
 
         return view('home.home')
             ->with

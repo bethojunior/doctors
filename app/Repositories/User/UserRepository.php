@@ -30,13 +30,23 @@ class UserRepository extends AbstractRepository
     }
 
     /**
-     * @return mixed
+     * @return Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model[]
      */
     public function findAllPatients(){
         return $this->getModel()
             ::with('userStatus')
             ->where('user_type_id','=',UserConstant::PACIENTE)
-            ->count('id');
+            ->get();
+    }
+
+    /**
+     * @return int
+     */
+    public function CountAllPatients(){
+        return $this->getModel()
+            ::with('userStatus')
+            ->where('user_type_id','=',UserConstant::PACIENTE)
+            ->count();
     }
 
 
