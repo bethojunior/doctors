@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Timeline;
 
 use App\Http\Controllers\Controller;
 use App\Services\User\UserService;
-use Illuminate\Http\Client\Request;
+use Illuminate\Http\Request;
 
 class TimelineController extends Controller
 {
