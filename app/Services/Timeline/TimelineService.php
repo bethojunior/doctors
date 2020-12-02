@@ -1,0 +1,48 @@
+<?php
+
+
+namespace App\Services\Timeline;
+
+
+use App\Constants\SalesStatus;
+use App\Models\Sales\Sales;
+use App\Models\Timeline\Timeline;
+use App\Repositories\Timeline\TimelineRepository;
+use Illuminate\Support\Facades\DB;
+
+class TimelineService
+{
+
+    private $repository;
+
+    /**.
+     * TimelineService constructor.
+     * @param TimelineRepository $repository
+     */
+    public function __construct(TimelineRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
+    /**
+     * @param array $request
+     * @return Timeline
+     * @throws \Exception
+     */
+    public function create(array $request)
+    {
+        try{
+            DB::beginTransaction();
+
+            $timeline = new Timeline($request);
+            $timeline->save();
+
+            DB::commit();
+
+        }catch (\Exception $exception){
+            DB::rollBack();
+            throw $exception;
+        }
+        return $timeline;
+    }
+}

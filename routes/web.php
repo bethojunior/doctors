@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['prefix' => 'timeline'], function () {
         Route::group(['as' => 'timeline'], function () {
-            Route::get('{id}', 'Timeline\TimelineController@index')->name('.index');
+            Route::get('{id}', 'Timeline\TimelineController@index')->name('.id');
             Route::post('create','Timeline\TimelineController@create')->name('.create');
         });
     });

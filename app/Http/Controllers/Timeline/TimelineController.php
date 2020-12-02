@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Timeline;
 
 
 use App\Http\Controllers\Controller;
+use App\Services\Timeline\TimelineService;
 use App\Services\User\UserService;
 use Illuminate\Http\Request;
 
@@ -12,13 +13,16 @@ class TimelineController extends Controller
 {
 
     private $userService;
+    private $timelineService;
 
     /**
      * TimelineController constructor.
      * @param UserService $userService
+     * @param TimelineService $timelineService
      */
-    public function __construct(UserService $userService)
+    public function __construct(UserService $userService , TimelineService $timelineService)
     {
+        $this->timelineService = $timelineService;
         $this->userService = $userService;
     }
 
@@ -32,9 +36,22 @@ class TimelineController extends Controller
         return view('timeline.user')->with(['users' => $users]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function create(Request $request)
     {
-        dd($request->all());
+        try{
+            $this
+                ->timelineService
+                ->create($request->all());
+        }catch (\Exception $exception){
+            return redirect()->route('timeline.create')
+                ->with('error', $exception->getindexMessage());
+        }
+        return redirect()->route('timeline.create')
+            ->with('success', 'Dados inserido ao cliente com sucesso');
     }
 
 }
