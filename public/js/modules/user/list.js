@@ -1,3 +1,6 @@
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
 elementProperty.addEventInElement('.delete-user','onclick',function (){
     let id = this.getAttribute('id');
     SwalCustom.dialogConfirm('Deseja desativa esse usuário?','Essa ação é irreversivel', status =>{

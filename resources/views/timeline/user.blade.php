@@ -6,7 +6,23 @@
 
 @section('content')
     @include('includes.alerts')
+    <form method="POST" action="{{ route('timeline.create') }}">
+        @csrf
+        @method('POST')
 
+        <div class="form-group col-lg-4 col-sm-12">
+            <span>Selecione o usuário</span>
+            <select class="col-lg-12 col-sm-12 js-example-basic-single" name="state">
+                @foreach($users as $user)
+                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group col-lg-4 col-sm-12"></div>
+        <div class="form-group col-lg-4 col-sm-12"></div>
+        <div class="form-group col-lg-4 col-sm-12"></div>
+        <div class="form-group col-lg-4 col-sm-12"></div>
+    </form>
 @stop
 
 @section('js')
