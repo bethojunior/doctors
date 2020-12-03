@@ -48,10 +48,21 @@ class TimelineController extends Controller
                 ->create($request->all());
         }catch (\Exception $exception){
             return redirect()->route('timeline.create')
-                ->with('error', $exception->getindexMessage());
+                ->with('error', $exception->getMessage());
         }
         return redirect()->route('timeline.create')
             ->with('success', 'Dados inserido ao cliente com sucesso');
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function findById($id)
+    {
+        $data = $this->timelineService
+            ->getDataByUser($id);
+        return view('timeline.timeline')->with(['data' => $data]);
     }
 
 }

@@ -45,4 +45,14 @@ class TimelineService
         }
         return $timeline;
     }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model[]
+     */
+    public function getDataByUser($id)
+    {
+        return $this->repository
+            ->getByUser($id);
+    }
 }
