@@ -10,18 +10,20 @@
         <thead>
         <tr>
             <th scope="col">Nome</th>
+            <th scope="col">Nascimento</th>
+            <th scope="col">CPF / RG</th>
             <th scope="col">Email</th>
             <th scope="col">Fone</th>
-            <th scope="col">Tipo</th>
         </tr>
         </thead>
         <tbody>
         @foreach($users as $user)
             <tr class="user-{{$user->id}}">
                 <th scope="row">{{ $user->name }}</th>
+                <th>{{ Carbon\Carbon::parse($user->was_born_in)->format('d/m/Y')  }}</th>
+                <td>{{ $user->document }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->phone }}</td>
-                <td>{{ $user->userType->name}}</td>
                 <td>
                     <a href="/timeline/{{ $user->id }}">
                         <button class="btn btn-info">

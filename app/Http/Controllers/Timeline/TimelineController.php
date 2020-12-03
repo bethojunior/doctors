@@ -54,6 +54,7 @@ class TimelineController extends Controller
             ->with('success', 'Dados inserido ao cliente com sucesso');
     }
 
+
     /**
      * @param $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View

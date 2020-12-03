@@ -6,7 +6,6 @@
 
 @section('content')
     @include('includes.alerts')
-
     <form class="row col-lg-12 col-sm-12" method="POST" action="{{ route('timeline.create') }}">
         @csrf
         @method('POST')
