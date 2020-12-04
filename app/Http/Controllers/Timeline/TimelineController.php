@@ -31,9 +31,9 @@ class TimelineController extends Controller
      */
     public function index()
     {
-//        $users = $this->userService
-//            ->getAllPatients();
-//        return view('timeline.timeline')->with(['users' => $users]);
+        $users = $this->userService
+            ->getAllPatients();
+        return view('timeline.timeline')->with(['users' => $users]);
     }
 
     /**
