@@ -47,10 +47,10 @@ class TimelineController extends Controller
                 ->timelineService
                 ->create($request->all());
         }catch (\Exception $exception){
-            return redirect()->route('timeline.create')
+            return redirect()->route('timeline.index')
                 ->with('error', $exception->getMessage());
         }
-        return redirect()->route('timeline.create')
+        return redirect()->route('timeline.index')
             ->with('success', 'Dados inserido ao cliente com sucesso');
     }
 
