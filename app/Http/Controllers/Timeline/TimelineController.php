@@ -33,7 +33,7 @@ class TimelineController extends Controller
     {
         $users = $this->userService
             ->getAllPatients();
-        return view('timeline.timeline')->with(['users' => $users]);
+        return view('timeline.user')->with(['users' => $users]);
     }
 
     /**

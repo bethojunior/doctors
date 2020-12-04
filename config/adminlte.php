@@ -242,7 +242,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Inserir dados',
-                    'url'  => 'timeline/create'
+                    'url'  => 'timeline'
                 ],
                 [
                     'text' => 'Listagem de pacientes',
