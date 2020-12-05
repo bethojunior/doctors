@@ -11,6 +11,9 @@
         @foreach($data as $content)
             <div class="card col-sm-12 col-lg-12">
                 <p>
+                    Paciente : {{ $content->user[0]['name'] }}
+                </p>
+                <p>
                     Titulo : {{ $content->title }}
                 </p>
                 <p>

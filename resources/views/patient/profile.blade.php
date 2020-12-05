@@ -6,7 +6,23 @@
 
 @section('content')
     @include('includes.alerts')
-    {{ $user }}
+    <div class="row col-lg-12 col-sm-12 card pt-2">
+        <p>
+            Nome : {{ $user->name }}
+        </p>
+        <p>
+            Fone : {{ $user->phone }}
+        </p>
+        <p>
+            Email : {{ $user->email }}
+        </p>
+        <p>
+            Documento : {{ $user->document }}
+        </p>
+        <p>
+            Data de nascimento : {{ Carbon\Carbon::parse($user->was_born_in)->format('d/m/Y')  }}
+        </p>
+    </div>
 @stop
 
 @section('js')
