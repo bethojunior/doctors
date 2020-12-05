@@ -9,6 +9,7 @@ use App\Http\Requests\User\InsertUser;
 use App\Http\Responses\ApiResponse;
 use App\Services\User\UserService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -108,6 +109,15 @@ class UserController extends Controller
         }
         return redirect()->route('user.index')
             ->with('success', 'Usuário atualizado com sucesso');
+    }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function showPatient()
+    {
+        $user = Auth::user();
+        return view('patient.profile')->with(['user' => $user]);
     }
 
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Constants\SalesStatus;
+use App\Constants\UserConstant;
 use App\Services\User\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -27,17 +28,30 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
 
         $patients = $this->userService
             ->countAllPatients();
 
-        return view('home.home')
+        $user = Auth::user();
+
+        if($user->user_type_id === UserConstant::ADMIN){
+            return view('home.home')
+                ->with
+                (
+                    [
+                        'patients' => $patients
+                    ]
+                );
+        }
+
+        return view('home.patiente')
             ->with
             (
                 [
-                    'patients' => $patients
+                    'user' => $user
                 ]
             );
+
+
     }
 }

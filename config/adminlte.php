@@ -210,47 +210,6 @@ return [
     */
 
     'menu' => [
-        [
-            'text' => 'search',
-            'search' => false,
-            'topnav' => false,
-        ],
-        [
-            'text'        => 'Incio',
-            'url'         => 'home',
-            'icon'        => 'fas fa-fw fa-home',
-        ],
-        ['header' => 'Usuários'],
-        [
-            'text' => 'Gerenciar usuários',
-            'icon' => 'fas fa-fw fa-user',
-            'submenu' => [
-                [
-                    'text' => 'Listagem de usuários',
-                    'url'  => 'user'
-                ],
-                [
-                    'text' => 'Inserir usuário',
-                    'url'  => 'user/create'
-                ]
-            ]
-        ],
-        ['header' => 'Gerenciamento de pacientes'],
-        [
-            'text' => 'Pacientes',
-            'icon' => 'fa fa-cogs',
-            'submenu' => [
-                [
-                    'text' => 'Inserir dados',
-                    'url'  => 'timeline'
-                ],
-                [
-                    'text' => 'Listagem de pacientes',
-                    'url'  => 'user/patients'
-                ],
-            ]
-        ],
-
 
     ],
 

@@ -31,5 +31,11 @@ Route::group(['middleware' => 'auth'], function () {
         });
     });
 
+    Route::group(['prefix' => 'patient'], function () {
+        Route::group(['as' => 'patient'], function () {
+            Route::get('', 'User\UserController@showPatient')->name('.showPatient');
+        });
+    });
+
 });
 
