@@ -44,7 +44,7 @@ class HomeController extends Controller
                 );
         }
 
-        return view('home.patiente')
+        return view('patient.profile')
             ->with
             (
                 [
