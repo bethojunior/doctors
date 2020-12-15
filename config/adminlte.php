@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Sistema de gerenciamento de clientes',
+    'title' => 'Sistema de gerenciamento de pacientes',
     'title_prefix' => '',
     'title_postfix' => '',
 
