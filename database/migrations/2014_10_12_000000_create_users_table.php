@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('document');
             $table->string('was_born_in')->nullable();
+            $table->string('blood')->nullable();
             $table->string('phone')->nullable();
             $table->string('allergy')->nullable();
 

@@ -9,7 +9,7 @@
     <form class="row col-lg-12 col-sm-12" method="POST" action="{{ route('user.insert') }}">
         @csrf
         <div class="form-group col-lg-4 col-sm-12">
-            <label>Nome</label>
+            <label>Nome completo</label>
             <input required type="text" name="name" class="form-control">
         </div>
         <div class="form-group col-lg-4 col-sm-12">
@@ -28,14 +28,20 @@
             <label>Data de nascimento</label>
             <input required type="date" name="was_born_in" class="form-control">
         </div>
+        <div class="form-group col-lg-2 col-sm-12">
+            <label>Tipo sanguinio</label>
+            <input type="text" name="blood" class="form-control">
+        </div>
+        <div class="form-group col-lg-2 col-sm-12">
+            <label>Fone</label>
+            <input required type="tel" name="phone" class="form-control">
+        </div>
+
         <div class="form-group col-lg-4 col-sm-12">
             <label>Senha</label>
             <input required type="text" name="password" class="form-control">
         </div>
-        <div class="form-group col-lg-4 col-sm-12">
-            <label>Fone</label>
-            <input required type="tel" name="phone" class="form-control">
-        </div>
+
         <div class="form-group col-lg-4 col-sm-12">
             <label for="exampleFormControlSelect1">Tipo de usuário</label>
             <select required name="user_type_id" class="form-control" id="exampleFormControlSelect1">

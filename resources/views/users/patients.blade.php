@@ -5,6 +5,12 @@
 @stop
 
 @section('content')
+    <div class="row col-sm-12 col-lg-12">
+        <div class="form-group">
+            <span>Digite o nome do paciente</span>
+            <input type="text" class="form-control col-sm-12 col-lg-12" id="search-patients">
+        </div>
+    </div>
     @include('includes.alerts')
     <table class="table table-striped">
         <thead>
@@ -14,16 +20,20 @@
             <th scope="col">CPF / RG</th>
             <th scope="col">Email</th>
             <th scope="col">Fone</th>
+            <th scope="col">Tipo sanguinio</th>
+            <th scope="col">Alergias</th>
         </tr>
         </thead>
         <tbody>
         @foreach($users as $user)
-            <tr class="user-{{$user->id}}">
+            <tr data="{{$user->name}}" class="through-patients user-{{$user->id}}">
                 <th scope="row">{{ $user->name }}</th>
                 <th>{{ Carbon\Carbon::parse($user->was_born_in)->format('d/m/Y')  }}</th>
                 <td>{{ $user->document }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->phone }}</td>
+                <td>{{ $user->blood }}</td>
+                <td>{{ $user->allergy }}</td>
                 <td>
                     <a href="/timeline/{{ $user->id }}">
                         <button class="btn btn-info">

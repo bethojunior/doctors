@@ -26,7 +26,8 @@ class User extends Authenticatable
         'phone',
         'document',
         'allergy',
-        'was_born_in'
+        'was_born_in',
+        'blood'
     ];
 
     /**

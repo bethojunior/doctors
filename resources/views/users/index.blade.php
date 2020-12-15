@@ -8,7 +8,7 @@
     @include('includes.alerts')
     <div class="row col-sm-12 col-lg-12">
         <div class="form-group">
-            <span>Buscar paciente</span>
+            <span>Buscar usuário</span>
             <input type="text" class="form-control col-sm-12 col-lg-12" id="search-user">
         </div>
     </div>
@@ -19,15 +19,19 @@
             <th scope="col">Email</th>
             <th scope="col">Fone</th>
             <th scope="col">Tipo</th>
+            <th scope="col">Fone</th>
+            <th scope="col">Documento</th>
         </tr>
         </thead>
         <tbody>
             @foreach($users as $user)
-                <tr class="user-{{$user->id}} user-{{ $user->name }}}">
+                <tr data="{{$user->name}}" class="through-users user-{{$user->id}} user-{{ $user->name }}">
                     <th scope="row">{{ $user->name }}</th>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->phone }}</td>
                     <td>{{ $user->userType->name}}</td>
+                    <td>{{ $user->phone}}</td>
+                    <td>{{ $user->document}}</td>
                     <td>
                         <a href="/timeline/{{ $user->id }}">
                             <button class="btn btn-info">

@@ -72,6 +72,7 @@ class UserService
                 'name'              => $request['name'],
                 'email'             => $request['email'],
                 'phone'             => $request['phone'],
+                'blood'             => $request['blood'],
                 'user_type_id'      => $request['user_type_id'],
                 'document'          => $request['document'],
                 'allergy'           => $request['allergy'],
