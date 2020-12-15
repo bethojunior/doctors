@@ -22,6 +22,14 @@
         <p>
             Data de nascimento : {{ Carbon\Carbon::parse($user->was_born_in)->format('d/m/Y')  }}
         </p>
+        <p>
+            Tipo sanguineo : {{ $user->blood }}
+        </p>
+        <p>
+            Alergias : @if($user->allergy === null) Sem alergias registradas até a ultima avaliação @endif
+            {{ $user->allergy }}
+        </p>
+
     </div>
 @stop
 
