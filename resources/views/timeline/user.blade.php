@@ -25,16 +25,17 @@
         </div>
         <div class="row col-lg-12 col-sm-12">
             <div class="col-lg-12 col-sm-12 form-group">
-                <span>Procedimento</span>
-                <textarea required class="form-control" name="procedure"></textarea>
-            </div>
-        </div>
-        <div class="row col-lg-12 col-sm-12">
-            <div class="col-lg-12 col-sm-12 form-group">
                 <span>Razão do procedimento</span>
                 <textarea required class="form-control" name="reason"></textarea>
             </div>
         </div>
+        <div class="row col-lg-12 col-sm-12">
+            <div class="col-lg-12 col-sm-12 form-group">
+                <span>Procedimento</span>
+                <textarea required class="form-control" name="procedure"></textarea>
+            </div>
+        </div>
+
         <div class="row col-lg-12 col-sm-12">
             <div class="col-lg-12 col-sm-12 form-group">
                 <span>Descrição do procedimento</span>
