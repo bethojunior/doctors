@@ -9,7 +9,7 @@
     @include('includes.alerts')
     <div class="row col-lg-12 col-sm-12">
         @foreach($data as $content)
-            <div class="card col-sm-12 col-lg-12">
+            <div class="card col-sm-12 col-lg-12 pt-2">
                 <p>
                     Paciente : {{ $content->user[0]['name'] }}
                 </p>
