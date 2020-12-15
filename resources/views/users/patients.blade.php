@@ -1,7 +1,7 @@
 @extends('layouts.page')
 @section('title', 'Listagem de usuários ')
 @section('content_header')
-    <h1 class="m-0 text-dark">Listagem de usuários</h1>
+    <h1 class="m-0 text-dark">Listagem de pacientes</h1>
 @stop
 
 @section('content')
